@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Document</title>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#b1").click(function () {
+                $("#segundo").hide(1500).show(1500).hide(1500).show(1500).hide(1500).show(1500).hide(1500).show(1500).hide(1500).show(1500).hide(1500).show(1500).hide(1500).show(1500);
+                
+            });
+
+            $("#b2").click(function () {
+                $("#primeiro").fadeOut(1500).fadeIn(1500);
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <button id="b1">encolhe e cresce</button>
+    <button id="b2">desaparece e aparece</button>
+    <img id="primeiro" src="young.jpg">
+    <img id="segundo" src="young.jpg">
+    
+</body>
+
+</html>

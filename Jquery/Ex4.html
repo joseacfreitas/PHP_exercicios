@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Document</title>
+
+    <script>
+        $(document).ready(function () {
+
+            $(this).keypress(function (event) {
+
+                $("#p1").text(event.charCode);
+                if (event.charCode == 97)
+                    $("img").css({'height':'+=10px','width':'+=10px'});
+
+                if (event.charCode == 112)
+                    $("img").css({'height':'-=10%','width':'-=10%'});
+
+                if (event.charCode == 101)
+                    $("img").css({'top':'-=10px'});
+
+                if (event.charCode == 100)
+                    $("img").css({'top':'+=10px'});
+
+                if (event.charCode == 115)
+                    $("img").css({'left':'+=10px'});
+
+                if (event.charCode == 102)
+                    $("img").css({'width':'100px'});               
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    
+    <p id="p1"></p>
+     
+    <img src="young.jpg" style="position:relative">
+
+</body>
+
+</html>

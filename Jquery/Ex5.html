@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Document</title>
+
+    <script>
+        $(document).ready(function () {
+
+            $(this).keypress(function () {
+
+                let x = 1000;
+
+                while (x > 1) {
+                    $("img").animate({ 'left': '+='+x+'px'},500).animate({ 'left': '-='+x+'px'},500);
+
+                   x = x/2;
+                }
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <img src="young.jpg" style="position:absolute">
+
+</body>
+
+</html>

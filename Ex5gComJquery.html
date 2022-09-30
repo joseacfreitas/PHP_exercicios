@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        button {
+            position: relative;
+            top: 1vw;
+            left: 15%;
+            color: white;
+            padding: 10px;
+            background-color: black;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body style='background-color: lightgray;'>
+
+    <script>
+        $(document).ready(function () {
+
+            $("button").click(function () {
+
+                let op1 = $(i1).val();
+                let op2 = $(i2).val();
+
+                $.post("http://192.168.64.2/PHP/Ex5gComJquery.php", { operando1:op1, operando2: op2 }, function (data, status) {
+                    $("div").html(data);
+                });
+            });
+        });
+    </script>
+
+    <input id="i1" />
+    <input id="i2" />
+
+    <button>clique</button>
+    <div> </div>
+
+</body>
+
+</html>

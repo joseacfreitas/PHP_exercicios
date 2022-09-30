@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Document</title>
+
+</head>
+
+<body onload="inicializa()">
+
+    <script>
+
+        function inicializa() {
+
+            setInterval(function () { actualiza() }, 100)
+        };
+
+        function actualiza()
+        {
+            $("body").append("<img src='young.jpg' style='position:absolute; left:"+Math.random()*100+"px; top:"+Math.random()*100+"px';right:"+Math.random()*100+"px; top:"+Math.random()*100+"px'>");
+        }
+
+    </script>
+
+</body>
+
+</html>

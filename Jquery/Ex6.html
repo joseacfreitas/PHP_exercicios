@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#b1").click(function () {
+
+                $("#v1").animate({ volume: 0.0 })
+                $("#s2").animate({ volue: 1 })
+            });
+
+            $("#b2").click(function () {
+
+                $("#v1").animate({ volume: 1 })
+                $("#s2").animate({ volue: 10 })
+            });
+
+            $("#b3").click(function () {
+
+                $("#v1").animate({ currentTime: 0.0 }, 5000)
+                $("#s1").animate({ volue: 0 }, 1000)
+            });
+
+            $("#s1").on('input', function () {
+
+                $("#v1").animate({ currentTime: $(this).val() }, 1)
+
+            });
+
+            $("#s2").on('input', function () {
+
+                $("#v1").animate({ volume: $(this).val() / 10 }, 0)
+            });
+
+        });
+
+    </script>
+
+    <p id="val">...</p>
+
+    <button id="b1">Mute</button>
+    <button id="b2">No Mute</button>
+    <button id="b3">Rewind</button>
+
+    <input type="range" min="1" max="125" value="0" class="slider" id="s1">
+
+    <input type="range" min="0" max="10" value="10" class="slider" id="s2">
+    <br>
+
+    <video id="v1" style="width:500px; height:400px" controls>
+        <source src="1.mp4" type="video/mp4" />
+    </video>
+    <br>
+
+    <script>
+        document.getElementById("v1").addEventListener("timeupdate", function () {
+            document.getElementById("val").innerHTML =
+                document.getElementById("v1").correntTime;
+
+            document.getElementById("s1").volue = document.getElementById("v1").correntTime;
+
+        });
+    </script>
+
+
+</body>
+
+</html>
